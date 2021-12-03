@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> One Page </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+        <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    </head>
+    <body>
+     <header>
+        <a href="#"class="logo"> Netflix </a>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contactUS">Contact US </a></li>
+          </ul>
+      </header>
+ 
+    <!-- prva sekcija so tri slajda-->
+        <section class="slider">
+            <div id="home" div class="Netflix">
+                <img src="Netflix/img1.jpg" class="active">
+                <img src="Netflix/img2.jpg">
+                <img src="Netflix/img3.jpg">
+
+            </div>
+            <div class="content">
+                <div class="active">
+                    <h2>Money Heist</h2>
+                    <p> Eight thieves take hostages and lock themselves in the Royal Mint 
+                        of Spain as a criminal mastermind manipulates the police to carry out his plan.
+                    </p>
+                </div>
+            
+            <div>
+                <h2>Lucifer</h2>
+                <p>Bored with being the Lord of Hell, the devil relocates to Los Angeles,
+                     where he opens a nightclub and forms a connection with a homicide detective.</p>
+                
+            </div>
+            <div>
+                <h2>Squid Game</h2>
+                <p> Hundreds of cash-strapped players accept a strange invitation to compete in children's games.
+                     Inside, a tempting prize awaits — with deadly high stakes.</p>
+                
+            </div>
+            </div>
+
+            <!-- kopcinja za next i previous-->
+            <ul class="controls">
+                <li onclick="PrevSlide(); PrevSlideText();"></li>
+                <li onclick="nextSlide(); nextSlideText();"></li>
+            </ul>
+        </section>
+
+        <!--funckija za pred i potoa-->
+       <script type="text/javascript">
+        const Netflix = document.querySelector('.Netflix');
+        const slides = Netflix.getElementsByTagName('img');
+        var i = 0;
+
+        function nextSlide(){
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+        }
+
+        function PrevSlide(){
+        slides[i].classList.remove('active');
+        i = (i - 1 + slides.length) % slides.length;
+        slides[i].classList.add('active');
+        }
+
+        //funcija za sodrzinata na slides
+        const content = document.querySelector('.content');
+        const slidesText = content.getElementsByTagName('div');
+        var j = 0;
+
+        function nextSlideText(){
+        slidesText[j].classList.remove('active');
+        j = (j + 1) % slidesText.length;
+        slidesText[j].classList.add('active'); 
+        }
+
+
+        function PrevSlideText(){
+        slidesText[j].classList.remove('active');
+        j = (j - 1 + slidesText.length) % slidesText.length;
+        slidesText[j].classList.add('active');
+        }
+
+        
+       
+        </script>
+        <!--kraj na prvata sekcija-->
+
+
+        <!--vtora sekcija galerija-->
+        <section id="gallery" class="slider2">
+         <h1>Gallery</h1>
+         <h3>Behind the scene</h3>
+         <div class="gallery">
+          <a href="gallery/1-1.jpg" data-lightbox="gallery"><img src="gallery/1.jpg"></a>
+          <a href="gallery/2-2.jpg" data-lightbox="gallery"><img src="gallery/2.jpg"></a>
+          <a href="gallery/3-3.jpg" data-lightbox="gallery"><img src="gallery/3.jpg"></a>
+           </div>
+           <div class="gallery">
+          <a href="gallery/4-4.jpg" data-lightbox="gallery"><img src="gallery/4.jpg"></a>
+          <a href="gallery/5-5.jpg" data-lightbox="gallery"><img src="gallery/5.jpg"></a>
+          <a href="gallery/6-6.jpg" data-lightbox="gallery"><img src="gallery/6.jpg"></a>
+
+           </div>
+        </section>
+
+
+        <!-- Treta sekcija forma za najava-->
+        <section id="contactUS" class="slider3">
+          <h1>Contact us</h1>
+          <h3>Report...</h3>
+            <div class="contact_form">
+
+                <h3 class="heading">Contact Us</h3>
+                <form>
+                  <div>
+                    <label for="name">Full Name</label><br />
+                    <input type="text" id="name" placeholder="Please Enter Your full name" required />
+                  </div>
+                  <div>
+                    <label for="email">Email</label><br />
+                    <input type="eamil" id="email" placeholder="Please Enter Your Email Id" required />
+                  </div>
+                  <div>
+                    <label for="phone">Phone Number</label><br />
+                    <input type="tel" id="phone" placeholder="Please Enter Your Phone Number" />
+                  </div>
+                  <div>
+                    <label for="message">Message</label><br />
+                    <textarea type="text" row="5" col="50" id="name" placeholder="Please Enter your message"></textarea>
+                  </div>
+                  <div class="btn">
+                    <button class="button" type="submit">Submit</button>
+                  </div>
+                </form>
+              </div>
+              
+            </section>
+
+<!-- footer-->
+    
+    <footer>
+    
+      <div class="footer">
+   	  
+        <div class="icon">
+          <ul>
+            <li><a href="https://www.facebook.com/netflix/" target="black"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/netflix/" target="black"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCWOA1ZGywLbqmigxE4Qlvuw" target="black"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>&copy Netflix</p>
+        </div>
+    </footer>
+    </body>
+</html>
